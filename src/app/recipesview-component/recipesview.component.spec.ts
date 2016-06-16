@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { RecipesviewComponentComponent } from './recipesview-component.component';
+import { RecipesviewComponent} from './recipesview.component';
 
 describe('Component: RecipesviewComponent', () => {
   it('should create an instance', () => {
-    let component = new RecipesviewComponentComponent();
+    let component = new RecipesviewComponent();
     expect(component).toBeTruthy();
   });
 });

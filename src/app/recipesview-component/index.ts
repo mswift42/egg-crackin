@@ -1,1 +1,1 @@
-export * from './recipesview-component.component';
+export * from './recipesview.component';
