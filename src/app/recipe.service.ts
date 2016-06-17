@@ -13,4 +13,13 @@ export class RecipeService {
   get food2forkKey(): String {
     return this._FOOD2FORKAPIKEY;
   }
+  queryUrl(query: String): String {
+    let split = query.trim().split(" ");
+    let url = "http://food2fork.com/api/search?key=" + this.food2forkKey + "&q=";
+    url += split[0];
+    for (var i of split.slice(1)) {
+      url += "&" + i;
+    }
+    return url;
+  }
 }
