@@ -25,6 +25,25 @@ describe('Searchhistory getter ', () => {
   expect(service.searchhistory.length).toBe(0)));
 });
 
+describe('contains method ', () => {
+  beforeEachProviders(() => [SearchHistoryService]);
+
+  it('should return false for an empty _searchhistory',
+  inject([SearchHistoryService], (service: SearchHistoryService) => {
+    expect(service.contains("butter")).toBeFalsy();
+  }));
+  it('should return false for an item not in searchhistory',
+  inject([SearchHistoryService], (service: SearchHistoryService) => {
+    service.saveSearch("ham");
+    expect(service.contains("butter")).toBeFalsy();
+  }));
+  it('should return true for an item in searchhistory',
+  inject([SearchHistoryService], (service: SearchHistoryService) => {
+    service.saveSearch("ham");
+    expect(service.contains("ham")).toBeTruthy();
+  }));
+});
+
 describe('saveSearch method ', () => {
   beforeEachProviders(() => [SearchHistoryService]);
 
@@ -43,7 +62,5 @@ describe('saveSearch method ', () => {
     expect(service.searchhistory[0]).toBe("ham");
     service.loadFromStorage();
     expect(service.searchhistory[0]).toBe("ham"); 
-  }))
-
-
+  }));
 });
