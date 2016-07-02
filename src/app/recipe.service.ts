@@ -5,16 +5,16 @@ import 'rxjs/add/operator/toPromise';
 export class Recipe {
 
     constructor(public publisher: string, public title: string,
-                public source_url: string, public image_url: string,
-                public publisher_url: string) { }
+        public source_url: string, public image_url: string,
+        public publisher_url: string) { }
 
 }
 @Injectable()
 export class RecipeService {
     private _FOOD2FORKAPIKEY: string = '7987c43afcf8a03a964bbcb0c9152c84';
 
-    constructor(private http: Http) {}
-
+    constructor(private http: Http) { }
+    
     get food2forkKey(): string {
         return this._FOOD2FORKAPIKEY;
     }
@@ -30,9 +30,9 @@ export class RecipeService {
     getRecipes(query: string): Promise<Recipe[]> {
         let url = this.queryUrl(query);
         return this.http.get(url)
-        .toPromise()
-        .then(response => response.json().data)
-        .catch(this.handleError);
+            .toPromise()
+            .then(response => response.json().data)
+            .catch(this.handleError);
     }
     private handleError(error: any) {
         console.error('An error occurred', error);
