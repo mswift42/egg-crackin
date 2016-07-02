@@ -53,6 +53,7 @@ const barrels: string[] = [
   'app/recipe-image',
   'app/publisher-url',
   'app/favourite',
+  'app/title',
   /** @cli-barrel */
 ];
 
