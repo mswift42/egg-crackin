@@ -11,6 +11,9 @@ export class SearchHistoryService {
   contains(search: string): boolean {
     return this._searchhistory.filter((i) => (i === search)).length > 0;
   }
+  get searchhistory(): string[] {
+    return this._searchhistory;
+  }
 
   saveSearch(search: string) {
     if (!(this.contains(search))) {
