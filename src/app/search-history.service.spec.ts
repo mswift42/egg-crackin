@@ -16,3 +16,11 @@ describe('SearchHistory Service', () => {
     expect(service).toBeTruthy();
   }));
 });
+
+describe('Searchhistory getter ', () => {
+  beforeEachProviders(() => [SearchHistoryService]);
+
+  it('should return a string array',
+  inject([SearchHistoryService], (service: SearchHistoryService) =>
+  expect(service.searchhistory.length).toBe(0)));
+});
