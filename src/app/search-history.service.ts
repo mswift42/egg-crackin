@@ -27,11 +27,11 @@ export class SearchHistoryService {
   }
 
   saveToStorage() {
-    this._localStorage.setItem(this._storagename, this._storagename);
+    this._localStorage.setItem(this._storagename, JSON.stringify(this._searchhistory));
   }
 
   loadFromStorage() {
-    this._searchhistory = this._localStorage.getItem(this._storagename);
-  }
+    this._searchhistory = JSON.parse(this._localStorage.getItem(this._storagename));
+    }
 
 }
