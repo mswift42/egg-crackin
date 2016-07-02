@@ -16,5 +16,7 @@ describe('Component: Title', () => {
   it('should create an instance', () => {
     let component = new TitleComponent();
     expect(component).toBeTruthy();
+    component.title = "test1";
+    expect(component.title).toBe('test1');
   });
 });
