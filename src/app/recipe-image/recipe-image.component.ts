@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['recipe-image.component.css']
 })
 export class RecipeImageComponent implements OnInit {
+
+  @Input() image_url: string;
+  @Input() alt_text: string;
+
 
   constructor() {}
 
