@@ -4,7 +4,8 @@
 <div class="recipesview">
   <div class="searchandrecipes">
   <div class="searchbox">
-    <md-input placeholder="Search for recipes or ingredients">
+    <md-input #rec placeholder="Search for recipes or ingredients"
+    (keyup.enter)="searchRecipes(rec.value)">
     </md-input>
   </div>
 </div>
