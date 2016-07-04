@@ -3,10 +3,16 @@
 </md-toolbar>
 <div class="recipesview">
   <div class="searchandrecipes">
-  <div class="searchbox">
-    <md-input #rec placeholder="Search for recipes or ingredients"
-    (keyup.enter)="searchRecipes(rec.value)">
-    </md-input>
+    <div class="searchbox">
+      <md-input #rec placeholder="Search for recipes or ingredients"
+                (keyup.enter)="searchRecipes(rec.value)">
+      </md-input>
+    </div>
   </div>
 </div>
+<div class="recipesview">
+  <div *ngFor="let rec of recipes">
+    <app-recipe title="rec.title" recipe_url="rec.recipe_url" image_url="recipe_url"
+                publisher="rec.publisher" publisher_url="publisher_url"></app-recipe>
+  </div>
 </div>
