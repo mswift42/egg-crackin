@@ -18,6 +18,7 @@ export class RecipesviewComponent {
     constructor(private recipeservice: RecipeService) { }
 
     searchRecipes(query: string) {
+        this.recipeservice.recipes = [];
         this.recipeservice.getRecipes(query)
             .subscribe((recs) => {
                 console.log()
