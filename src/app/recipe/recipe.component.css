@@ -2,3 +2,7 @@ md-card {
     max-width: 420px;
     margin:1em;
 }
+
+md-card-title {
+    padding:1em;
+}
