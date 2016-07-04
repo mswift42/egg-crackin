@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -13,7 +13,7 @@ export class Recipe {
 @Injectable()
 export class RecipeService {
     private _FOOD2FORKAPIKEY: string = '7987c43afcf8a03a964bbcb0c9152c84';
-    public recipes: Recipe[];
+    public recipes: Recipe[] = [];
 
     constructor(private http: Http) {}
 
@@ -29,10 +29,15 @@ export class RecipeService {
         }
         return url;
     }
-    getRecipes(query: string): Observable<Recipe[]> {
+
+    private extractData(res: Response) {
+        let body = res.json();
+        return body["recipes"] || {};
+    }
+    getRecipes(query: string): Observable<String> {
         let url = this.queryUrl(query);
         return this.http.get(url)
-            .map(response => response.json().data)
+            .map(this.extractData)
             .catch(this.handleError);
     }
     private handleError(error: any) {
