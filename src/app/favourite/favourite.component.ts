@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'favourite.component.html',
   styleUrls: ['favourite.component.css']
 })
-export class FavouriteComponent implements OnInit {
+export class FavouriteComponent {
+
+  @Input() recipe_url: string;
 
   constructor() {}
-
-  ngOnInit() {
-  }
-
 }
