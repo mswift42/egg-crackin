@@ -6,3 +6,9 @@ md-card {
 md-card-title {
     padding:1em;
 }
+
+md-card-actions {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
