@@ -31,8 +31,9 @@ export class RecipeService {
     }
     unsantize(s: string): string {
         s = s.replace("&nbsp", " ");
-        s = s.replace("&#8217;", "'");
-        return s.replace("&amp;", "&")
+        s = s.replace(/&#8217\;/g, "'");
+        s = s.replace(/&#174\;/g, "");
+        return s.replace(/&amp\;/g, "&")
     }
 
     private extractData(res: Response) {
