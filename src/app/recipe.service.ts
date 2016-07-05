@@ -6,8 +6,8 @@ import 'rxjs/add/operator/map';
 export class Recipe {
 
     constructor(public publisher: string, public title: string,
-                public source_url: string, public image_url: string,
-                public publisher_url: string) { }
+        public source_url: string, public image_url: string,
+        public publisher_url: string) { }
 
 }
 @Injectable()
@@ -15,7 +15,7 @@ export class RecipeService {
     private _FOOD2FORKAPIKEY: string = '7987c43afcf8a03a964bbcb0c9152c84';
     public recipes: Recipe[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http) { }
 
     get food2forkKey(): string {
         return this._FOOD2FORKAPIKEY;
@@ -29,6 +29,10 @@ export class RecipeService {
         }
         return url;
     }
+    unsantize(s: string): string {
+        s = s.replace("&nbsp", " ");
+        return s.replace("&amp;", "&")
+    }
 
     private extractData(res: Response) {
         let body = res.json();
@@ -41,7 +45,7 @@ export class RecipeService {
             .catch(this.handleError);
     }
     private handleError(error: any) {
-        
+
         console.error('An error occurred', error);
         return Observable.throw(error);
     }
