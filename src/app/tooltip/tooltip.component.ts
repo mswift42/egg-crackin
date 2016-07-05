@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'tooltip.component.html',
   styleUrls: ['tooltip.component.css']
 })
-export class TooltipComponent implements OnInit {
+export class TooltipComponent {
 
-  constructor() {}
+  @Input() message: string;
 
-  ngOnInit() {
-  }
+  constructor() { }
 
 }
