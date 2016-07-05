@@ -12,9 +12,3 @@ import {
 
 import { RecipesviewComponent} from './recipesview.component';
 
-describe('Component: RecipesviewComponent', () => {
-  it('should create an instance', () => {
-    let component = new RecipesviewComponent();
-    expect(component).toBeTruthy();
-  });
-});

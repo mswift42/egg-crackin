@@ -31,6 +31,7 @@ export class RecipeService {
     }
     unsantize(s: string): string {
         s = s.replace("&nbsp", " ");
+        s = s.replace("&#8217;", "'");
         return s.replace("&amp;", "&")
     }
 

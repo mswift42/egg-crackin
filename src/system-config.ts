@@ -54,6 +54,7 @@ const barrels: string[] = [
   'app/publisher-url',
   'app/favourite',
   'app/title',
+  'app/tooltip',
   /** @cli-barrel */
 ];
 
