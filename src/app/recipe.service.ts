@@ -33,7 +33,7 @@ export class RecipeService {
         s = s.replace("&nbsp", " ");
         s = s.replace(/&#8217\;/g, "'");
         s = s.replace(/&#174\;/g, "");
-        return s.replace(/&amp\;/g, "&")
+        return s.replace(       /&amp\;/g, "&")
     }
 
     private extractData(res: Response) {
