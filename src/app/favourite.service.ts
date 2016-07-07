@@ -14,6 +14,10 @@ export class FavouriteService {
 
 	constructor() { }
 
+	saveFavourite(recipe: Recipe) {
+		this._favourites.unshift(recipe);
+	}
+
 
 
 	saveToStorage() {
