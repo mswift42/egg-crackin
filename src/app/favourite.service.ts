@@ -7,7 +7,23 @@ export class FavouriteService {
 	private _storagename = 'FAVOURITES';
 	private _localStorage = window.localStorage;
 
+	get favourites(): Recipe[] {
+		return this._favourites;
+	}
 
-	constructor() {}
+
+	constructor() { }
+
+
+
+	saveToStorage() {
+		this._localStorage.setItem(this._storagename,
+			JSON.stringify(this._favourites));
+	}
+
+	loadFromStorage() {
+		this._favourites =
+			JSON.parse(this._localStorage.getItem(this._storagename));
+	}
 
 }
