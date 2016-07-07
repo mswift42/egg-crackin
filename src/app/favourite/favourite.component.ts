@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {TooltipComponent} from '../tooltip/tooltip.component';
 import {FavouriteService} from '../favourite.service';
+import {Recipe} from '../recipe.service';
 
 @Component({
   moduleId: module.id,
@@ -17,5 +18,12 @@ export class FavouriteComponent {
   @Input() image_url: string;
   @Input() publisher_url: string;
 
-  constructor(_favouriteService: FavouriteService) { }
+  constructor(private _favouriteService: FavouriteService) { }
+
+  addFavourite() {
+    let recipe = new Recipe(this.publisher, this.title, this.source_url,
+      this.image_url, this.publisher_url);
+    this._favouriteService.saveFavourite(recipe);
+  }
+
 }
