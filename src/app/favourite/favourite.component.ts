@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {TooltipComponent} from '../tooltip/tooltip.component';
+import {FavouriteService} from '../favourite.service';
 
 @Component({
   moduleId: module.id,
@@ -16,5 +17,5 @@ export class FavouriteComponent {
   @Input() image_url: string;
   @Input() publisher_url: string;
 
-  constructor() { }
+  constructor(_favouriteService: FavouriteService) { }
 }
