@@ -12,9 +12,3 @@ import {
 
 import { FavouriteComponent } from './favourite.component';
 
-describe('Component: Favourite', () => {
-  it('should create an instance', () => {
-    let component = new FavouriteComponent();
-    expect(component).toBeTruthy();
-  });
-});
