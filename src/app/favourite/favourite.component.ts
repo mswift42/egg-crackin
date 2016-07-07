@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {TooltipComponent} from '../tooltip/tooltip.component';
 
 @Component({
@@ -9,8 +9,12 @@ import {TooltipComponent} from '../tooltip/tooltip.component';
   directives: [TooltipComponent]
 })
 export class FavouriteComponent {
-
+  @Input() publisher: string;
   @Input() recipe_url: string;
+  @Input() title: string;
+  @Input() source_url: string;
+  @Input() image_url: string;
+  @Input() publisher_url: string;
 
-  constructor() {}
+  constructor() { }
 }
