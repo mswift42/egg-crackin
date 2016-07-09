@@ -26,7 +26,7 @@ export class RecipeService {
         let url = "http://food2fork.com/api/search?key=" + this.food2forkKey + "&q=";
         url += split[0];
         for (var i of split.slice(1)) {
-            url += "&" + i;
+        url += "+" + i;
         }
         return url;
     }
