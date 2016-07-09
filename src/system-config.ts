@@ -55,6 +55,7 @@ const barrels: string[] = [
   'app/favourite',
   'app/title',
   'app/tooltip',
+  'app/favourites-view',
   /** @cli-barrel */
 ];
 
