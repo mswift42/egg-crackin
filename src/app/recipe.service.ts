@@ -3,6 +3,7 @@ import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+
 export class Recipe {
 
     constructor(public publisher: string, public title: string,
