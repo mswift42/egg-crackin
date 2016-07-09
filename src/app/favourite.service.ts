@@ -16,6 +16,7 @@ export class FavouriteService {
 
 	saveFavourite(recipe: Recipe) {
 		this._favourites.unshift(recipe);
+		this.saveToStorage();
 	}
 
 
