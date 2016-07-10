@@ -1,3 +1,22 @@
 import {provideRouter, RouterConfig} from '@angular/router';
 import {RecipesviewComponent} from './recipesview-component/recipesview.component';
 import {FavouritesViewComponent} from './favourites-view/favourites-view.component';
+
+const routes: RouterConfig = [
+    {
+        path: 'recipesearch',
+        component: RecipesviewComponent
+    },
+    {
+        path: '',
+        redirectTo: '/recipesearch'
+    },
+    {
+        path: 'favourites',
+        component: FavouritesViewComponent
+    }
+];
+
+export const APP_ROUTER_PROVIDERS = [
+    provideRouter(routes)
+];
