@@ -12,9 +12,3 @@ import {
 
 import { FavouritesViewComponent } from './favourites-view.component';
 
-describe('Component: FavouritesView', () => {
-  it('should create an instance', () => {
-    let component = new FavouritesViewComponent();
-    expect(component).toBeTruthy();
-  });
-});
