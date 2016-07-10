@@ -8,12 +8,12 @@ const routes: RouterConfig = [
         component: RecipesviewComponent
     },
     {
-        path: '',
-        redirectTo: '/recipesearch'
-    },
-    {
         path: 'favourites',
         component: FavouritesViewComponent
+    },
+    {
+        path: '',
+        redirectTo: '/recipesearch'
     }
 ];
 
