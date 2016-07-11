@@ -7,9 +7,10 @@
   </md-toolbar>
 
   <md-sidenav #sidenav mode="side" opened="true" class="app-sidenav">
-    Home
-    <a [routerLink]="['/recipesearch']">Search Recipes</a>
-    <a [routerLink]="['/favourites']">Favourites</a>
+    <div class="routerlinks">
+      <a [routerLink]="['/recipesearch']">Search Recipes</a>
+      <a [routerLink]="['/favourites']">Favourites</a>
+    </div>
   </md-sidenav>
   <div class="app-content">
     <router-outlet></router-outlet>
