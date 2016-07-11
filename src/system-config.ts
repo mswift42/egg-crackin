@@ -56,6 +56,7 @@ const barrels: string[] = [
   'app/title',
   'app/tooltip',
   'app/favourites-view',
+  'app/sidenav',
   /** @cli-barrel */
 ];
 
