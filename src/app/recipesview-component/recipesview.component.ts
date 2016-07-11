@@ -12,7 +12,7 @@ import {RecipeComponent} from '../recipe/recipe.component';
 })
 export class RecipesviewComponent {
 
-    recipes: Recipe[];
+    recipes: Recipe[] = [];
 
     constructor(private recipeservice: RecipeService) { }
 

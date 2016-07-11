@@ -3,18 +3,22 @@ import {RecipesviewComponent} from './recipesview-component/recipesview.componen
 import {FavouritesViewComponent} from './favourites-view/favourites-view.component';
 
 const routes: RouterConfig = [
+ 
+    {
+        path: '',
+        redirectTo: '/recipesearch',
+        pathMatch: 'full'
+    },
     {
         path: 'recipesearch',
         component: RecipesviewComponent
     },
+
     {
         path: 'favourites',
         component: FavouritesViewComponent
     },
-    {
-        path: '',
-        redirectTo: '/recipesearch'
-    }
+
 ];
 
 export const APP_ROUTER_PROVIDERS = [
