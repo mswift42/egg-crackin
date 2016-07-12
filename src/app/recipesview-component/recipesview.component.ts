@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
+import {MdInput} from '@angular2-material/input';
 import {Recipe, RecipeService} from '../recipe.service';
 import {RecipeComponent} from '../recipe/recipe.component';
 
@@ -8,7 +8,7 @@ import {RecipeComponent} from '../recipe/recipe.component';
   selector: 'app-recipesview',
   templateUrl: 'recipesview.component.html',
   styleUrls: ['recipesview.component.css'],
-  directives: [MD_INPUT_DIRECTIVES, RecipeComponent]
+  directives: [MdInput, RecipeComponent]
 })
 export class RecipesviewComponent {
 
