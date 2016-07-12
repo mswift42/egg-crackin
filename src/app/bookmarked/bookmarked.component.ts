@@ -23,8 +23,9 @@ export class BookmarkedComponent {
 
     constructor(private _favouriteService: FavouriteService) {}
 
-    deleteFavourite() {
-        this._favouriteService.deleteFavourite(this.recipe_url);
+    deleteFavourite(recipe_url: string) {
+        console.log(recipe_url);
+        this._favouriteService.deleteFavourite(recipe_url);
     }
 
 
