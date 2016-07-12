@@ -3,13 +3,15 @@
     <md-card-title>
       <app-title title="{{title}}" recipe_url="{{recipe_url}}"></app-title>
     </md-card-title>
-    <app-recipe-image image_url="{{image_url}}" alt-text="{{title}}"></app-recipe-image>A
+    <app-recipe-image image_url="{{image_url}}" alt-text="{{title}}"></app-recipe-image>
     <md-card-actions>
       <div class="deleteicon">
-        <i class="material-icons">delete_forever</i>
+        <app-tooltip message="delete bookmark">
+          <i class="material-icons">delete_forever</i>
+        </app-tooltip>
       </div>
       <app-publisher-url publisher="{{publisher}}"
-      publisher_url="{{publisher_url}}"></app-publisher-url>
+                         publisher_url="{{publisher_url}}"></app-publisher-url>
     </md-card-actions>
   </md-card>
 </div>

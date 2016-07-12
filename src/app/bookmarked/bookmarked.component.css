@@ -12,3 +12,7 @@ md-card-actions {
     flex-direction: row;
     justify-content: space-between;
 }
+
+app-tooltip {
+    font-size:80%;
+}
