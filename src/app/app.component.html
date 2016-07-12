@@ -8,8 +8,14 @@
 
   <md-sidenav #sidenav mode="side" opened="true" class="app-sidenav">
     <div class="routerlinks">
-      <a [routerLink]="['/recipesearch']">Search Recipes</a>
-      <a [routerLink]="['/favourites']">Favourites</a>
+      <md-list>
+        <md-list-item>
+          <a [routerLink]="['/recipesearch']">Search Recipes</a>
+        </md-list-item>
+        <md-list-item>
+          <a [routerLink]="['/favourites']">Favourites</a>
+        </md-list-item>
+      </md-list>
     </div>
   </md-sidenav>
   <div class="app-content">
