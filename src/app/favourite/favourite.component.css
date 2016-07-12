@@ -1,3 +1,7 @@
 i:hover {
     cursor:pointer;
 }
+
+app-tooltip {
+    font-size:80%;
+}
