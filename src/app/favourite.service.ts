@@ -19,7 +19,8 @@ export class FavouriteService {
         this.saveToStorage();
     }
     deleteFavourite(source_url: string) {
-        this._favourites = this._favourites.filter((i) => i.source_url !== source_url);
+        console.log(this._favourites.filter((i) => (i.source_url == source_url)));
+        this._favourites = this._favourites.filter((i) => (i.source_url != source_url));
         this.saveToStorage();
     }
 
