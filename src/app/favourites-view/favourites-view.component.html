@@ -1,7 +1,7 @@
 <div class="favouritesview">
   <div *ngFor="let rec of recipes">
-    <app-recipe title="{{rec.title}}" recipe_url="{{rec.source_url}}"
+    <app-bookmarked title="{{rec.title}}" recipe_url="{{rec.source_url}}"
                 image_url="{{rec.image_url}}" publisher="{{rec.publisher}}" 
-                publisher_url="{{rec.publisher_url}}"></app-recipe>
+                publisher_url="{{rec.publisher_url}}"></app-bookmarked>
   </div>
 </div>

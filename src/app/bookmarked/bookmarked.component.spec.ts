@@ -12,9 +12,3 @@ import {
 
 import { BookmarkedComponent } from './bookmarked.component';
 
-describe('Component: Bookmarked', () => {
-  it('should create an instance', () => {
-    let component = new BookmarkedComponent();
-    expect(component).toBeTruthy();
-  });
-});
