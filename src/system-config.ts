@@ -59,7 +59,8 @@ const barrels: string[] = [
     'app/tooltip',
     'app/favourites-view',
     'app/sidenav',
-    /** @cli-barrel */
+    'app/bookmarked',
+  /** @cli-barrel */
 ];
 
 const cliSystemConfigPackages: any = {};
