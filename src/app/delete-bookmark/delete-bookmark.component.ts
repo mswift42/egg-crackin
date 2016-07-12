@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'delete-bookmark.component.html',
   styleUrls: ['delete-bookmark.component.css']
 })
-export class DeleteBookmarkComponent implements OnInit {
+export class DeleteBookmarkComponent {
+  @Input() recipe_url: string;
+  @Output() onDeleted = new EventEmitter<string>();
 
   constructor() {}
 
-  ngOnInit() {
+  deleteBookmark() {
+    this.onDeleted.emit(this.recipe_url);
   }
 
 }
