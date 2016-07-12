@@ -4,13 +4,15 @@ import { RecipeImageComponent} from '../recipe-image/recipe-image.component';
 import { TitleComponent} from '../title/title.component';
 import { PublisherUrlComponent} from '../publisher-url/publisher-url.component';
 import {TooltipComponent} from '../tooltip/tooltip.component';
+import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 @Component({
     moduleId: module.id,
     selector: 'app-bookmarked',
     templateUrl: 'bookmarked.component.html',
     styleUrls: ['bookmarked.component.css'],
     directives: [TitleComponent, PublisherUrlComponent, 
-    RecipeImageComponent, TooltipComponent]
+    RecipeImageComponent, TooltipComponent, TooltipComponent,
+    MD_CARD_DIRECTIVES]
 })
 export class BookmarkedComponent {
     @Input() title: string;
