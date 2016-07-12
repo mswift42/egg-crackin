@@ -20,4 +20,9 @@ export class FavouritesViewComponent implements OnInit {
   this.recipes = this._favouriteService.favourites;
   }
 
+  onDeleted(recipe_url: string) {
+    this.recipes = this.recipes.filter((i) => i.source_url != recipe_url);
+    this._favouriteService.deleteFavourite(recipe_url);
+  }
+
 }

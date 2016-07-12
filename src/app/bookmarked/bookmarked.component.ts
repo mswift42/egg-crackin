@@ -1,17 +1,18 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { FavouriteService } from '../favourite.service';
 import { RecipeImageComponent} from '../recipe-image/recipe-image.component';
 import { TitleComponent} from '../title/title.component';
 import { PublisherUrlComponent} from '../publisher-url/publisher-url.component';
 import {TooltipComponent} from '../tooltip/tooltip.component';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
+import {DeleteBookmarkComponent} from  '../delete-bookmark/delete-bookmark.component';
 @Component({
     moduleId: module.id,
     selector: 'app-bookmarked',
     templateUrl: 'bookmarked.component.html',
     styleUrls: ['bookmarked.component.css'],
     directives: [TitleComponent, PublisherUrlComponent, 
-    RecipeImageComponent, TooltipComponent, TooltipComponent,
+    RecipeImageComponent, TooltipComponent, TooltipComponent,DeleteBookmarkComponent,
     MD_CARD_DIRECTIVES]
 })
 export class BookmarkedComponent {
@@ -21,11 +22,13 @@ export class BookmarkedComponent {
     @Input() publisher: string;
     @Input() publisher_url: string;
 
+    @Output() onDeleted = new EventEmitter<string>();
+
     constructor(private _favouriteService: FavouriteService) {}
 
-    deleteFavourite(recipe_url: string) {
-        console.log(recipe_url);
-        this._favouriteService.deleteFavourite(recipe_url);
+
+    deleteBookmark() {
+        this.onDeleted.emit(this.recipe_url);
     }
 
 
