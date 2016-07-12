@@ -7,7 +7,7 @@
     <md-card-actions>
       <div class="deleteicon">
         <app-tooltip message="delete bookmark">
-          <i class="material-icons">delete_forever</i>
+          <i class="material-icons" (click)="deleteFavourite()">delete_forever</i>
         </app-tooltip>
       </div>
       <app-publisher-url publisher="{{publisher}}"

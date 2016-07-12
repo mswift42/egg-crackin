@@ -16,3 +16,7 @@ md-card-actions {
 app-tooltip {
     font-size:80%;
 }
+
+i:hover {
+    cursor: pointer;
+}
