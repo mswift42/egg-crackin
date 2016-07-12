@@ -21,7 +21,8 @@ const materialPkgs:string[] = [
     'grid-list',
     'input',
     'sidenav',
-    'toolbar'
+    'toolbar',
+    'list',
 ];
 materialPkgs.forEach((pkg) => {
     packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
@@ -40,6 +41,7 @@ const barrels: string[] = [
     '@angular/router',
     '@angular/platform-browser',
     '@angular/platform-browser-dynamic',
+    '@angular/forms',
 
     // Thirdparty barrels.
     'rxjs',
@@ -48,16 +50,16 @@ const barrels: string[] = [
     'app',
     'app/shared',
     'app/recipesview-component',
-  'app/recipe',
-  'app/recipe-url',
-  'app/recipe-image',
-  'app/publisher-url',
-  'app/favourite',
-  'app/title',
-  'app/tooltip',
-  'app/favourites-view',
-  'app/sidenav',
-  /** @cli-barrel */
+    'app/recipe',
+    'app/recipe-url',
+    'app/recipe-image',
+    'app/publisher-url',
+    'app/favourite',
+    'app/title',
+    'app/tooltip',
+    'app/favourites-view',
+    'app/sidenav',
+    /** @cli-barrel */
 ];
 
 const cliSystemConfigPackages: any = {};

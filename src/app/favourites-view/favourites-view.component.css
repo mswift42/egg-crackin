@@ -1,0 +1,9 @@
+.favouritesview {
+    margin-top: 20px;
+    width: 98%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-content:stretch; 
+}
