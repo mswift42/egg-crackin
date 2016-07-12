@@ -21,8 +21,8 @@ export class FavouriteComponent {
   constructor(private _favouriteService: FavouriteService) { }
 
   addFavourite() {
-    let recipe = new Recipe(this.publisher, this.title, this.recipe_url,
-      this.image_url, this.publisher_url);
+    let recipe = new Recipe(this.publisher, this.title,
+      this.recipe_url, this.image_url, this.publisher_url);
     this._favouriteService.saveFavourite(recipe);
   }
 
