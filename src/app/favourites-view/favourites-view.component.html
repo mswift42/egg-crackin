@@ -1,11 +1,9 @@
+<div class="header">
+  <h1>Favourites</h1>
+</div>
 <div class="favouritesview">
-  <div class="header">
-    <h1>Favourites</h1>
-  </div>
   <div *ngFor="let rec of recipes">
-    <app-bookmarked title="{{rec.title}}" recipe_url="{{rec.source_url}}"
-                    image_url="{{rec.image_url}}" publisher="{{rec.publisher}}" 
-                    publisher_url="{{rec.publisher_url}}"
-                    (onDeleted)="onDeleted($event)"></app-bookmarked>
+    <app-bookmarked title="{{rec.title}}" recipe_url="{{rec.source_url}}" image_url="{{rec.image_url}}" publisher="{{rec.publisher}}"
+      publisher_url="{{rec.publisher_url}}" (onDeleted)="onDeleted($event)"></app-bookmarked>
   </div>
 </div>
