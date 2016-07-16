@@ -7,6 +7,7 @@ import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 import {ROUTER_DIRECTIVES} from '@angular/router';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
+import {SearchHistoryService} from './search-history.service';
 
 @Component({
     moduleId: module.id,
@@ -16,7 +17,7 @@ import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
     directives: [RecipesviewComponent, MdToolbar, ROUTER_DIRECTIVES,
                  MD_SIDENAV_DIRECTIVES, MD_LIST_DIRECTIVES,
                  MD_BUTTON_DIRECTIVES],
-    providers: [RecipeService, FavouriteService]
+    providers: [RecipeService, FavouriteService, SearchHistoryService]
 })
 export class AppComponent {
 }
