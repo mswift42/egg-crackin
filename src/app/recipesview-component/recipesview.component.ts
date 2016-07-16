@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import {MdInput} from '@angular2-material/input';
 import {Recipe, RecipeService} from '../recipe.service';
 import {RecipeComponent} from '../recipe/recipe.component';
-
+import {RecipeSearchComponent} from '../recipe-search/recipe-search.component';
 @Component({
   moduleId: module.id,
   selector: 'app-recipesview',
   templateUrl: 'recipesview.component.html',
   styleUrls: ['recipesview.component.css'],
-  directives: [MdInput, RecipeComponent]
+  directives: [MdInput, RecipeComponent, RecipeSearchComponent]
 })
 export class RecipesviewComponent {
 

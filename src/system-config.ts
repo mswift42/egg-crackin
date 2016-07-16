@@ -62,6 +62,7 @@ const barrels: string[] = [
     'app/bookmarked',
   'app/delete-bookmark',
   'app/search-history',
+  'app/recipe-search',
   /** @cli-barrel */
 ];
 
