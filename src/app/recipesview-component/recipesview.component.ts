@@ -19,7 +19,6 @@ export class RecipesviewComponent {
         this.recipeservice.recipes = [];
         this.recipeservice.getRecipes(query)
             .subscribe((recs) => {
-                console.log()
                 for (var i = 0;i<recs.length;i++) {
                     this.recipeservice.recipes.push(new Recipe(recs[i]["publisher"],
                      this.recipeservice.unsantize(recs[i]["title"]), 
