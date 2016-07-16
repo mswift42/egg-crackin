@@ -1,0 +1,17 @@
+<div class="recipe">
+  <md-card>
+    <md-card-title>
+      <app-title title="{{title}}" recipe_url="{{recipe_url}}"></app-title>
+    </md-card-title>
+    <app-recipe-image image_url="{{image_url}}"
+                      alt_text="{{title}}"></app-recipe-image>
+    <md-card-actions>
+      <app-favourite recipe_url="{{recipe_url}}"
+                     title="{{title}}" image_url="{{image_url}}"
+                     publisher="{{publisher}}" publisher_url="{{publisher_url}}"
+                     (click)="addFavourite"></app-favourite>
+      <app-publisher-url publisher="{{publisher}}"
+                         publisher_url="{{publisher_url}}"></app-publisher-url>
+    </md-card-actions>
+  </md-card>
+</div>

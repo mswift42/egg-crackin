@@ -1,0 +1,27 @@
+<md-sidenav-layout fullscreen>
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    <span>EggCrackin!</span>
+  </md-toolbar>
+
+  <md-sidenav #sidenav mode="side" opened="true" class="app-sidenav">
+    <div class="routerlinks">
+      <md-list>
+        <md-list-item>
+          <a [routerLink]="['/recipesearch']">Search Recipes</a>
+        </md-list-item>
+        <md-list-item>
+          <a [routerLink]="['/favourites']">Favourites</a>
+        </md-list-item>
+      </md-list>
+    </div>
+    <div class="searchhistory">
+      <app-search-history></app-search-history>
+    </div>
+  </md-sidenav>
+  <ng-content></ng-content>
+    <router-outlet></router-outlet>
+</md-sidenav-layout>
+<!--<app-recipesview></app-recipesview>-->

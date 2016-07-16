@@ -1,0 +1,18 @@
+<div class="bookmarked">
+  <md-card>
+    <md-card-title>
+      <app-title title="{{title}}" recipe_url="{{recipe_url}}"></app-title>
+    </md-card-title>
+    <app-recipe-image image_url="{{image_url}}" alt-text="{{title}}"></app-recipe-image>
+    <md-card-actions>
+      <div class="deleteicon">
+        <app-tooltip message="delete bookmark">
+          <app-delete-bookmark recipe_url="{{recipe_url}}" 
+          (onDeleted)="deleteBookmark($event)"></app-delete-bookmark>
+        </app-tooltip>
+      </div>
+      <app-publisher-url publisher="{{publisher}}"
+                         publisher_url="{{publisher_url}}"></app-publisher-url>
+    </md-card-actions>
+  </md-card>
+</div>

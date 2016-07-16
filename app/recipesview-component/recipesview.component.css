@@ -1,0 +1,17 @@
+.recipesview {
+    margin-top: 20px;
+    width: 98%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-content:stretch; 
+}
+
+.searchandrecipes {
+    width:60%;
+    margin:0 auto;
+}
+
+.searchbox {
+}
