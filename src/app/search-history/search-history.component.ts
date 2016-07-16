@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchHistoryService} from '../search-history.service';
 
 @Component({
   moduleId: module.id,
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['search-history.component.css']
 })
 export class SearchHistoryComponent implements OnInit {
+  searchhistory: string[];
 
-  constructor() {}
+  constructor(private _searchhistory: SearchHistoryService) {}
 
   ngOnInit() {
+    this._searchhistory.loadFromStorage();
+    this.searchhistory = this._searchhistory.searchhistory;
   }
 
 }

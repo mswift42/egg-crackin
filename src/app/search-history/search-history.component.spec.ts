@@ -12,9 +12,3 @@ import {
 
 import { SearchHistoryComponent } from './search-history.component';
 
-describe('Component: SearchHistory', () => {
-  it('should create an instance', () => {
-    let component = new SearchHistoryComponent();
-    expect(component).toBeTruthy();
-  });
-});
