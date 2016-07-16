@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import {SearchHistoryService} from '../search-history.service';
 
 @Component({
@@ -8,8 +8,11 @@ import {SearchHistoryService} from '../search-history.service';
   styleUrls: ['recipe-search.component.css']
 })
 export class RecipeSearchComponent {
+  @Output() onSubmit = new EventEmitter<string>();
 
   constructor(private _searchHistoryService: SearchHistoryService) {}
 
-
+  searchRecipe(query: string) {
+    this.onSubmit.emit(query);
+  }
 }
