@@ -1,5 +1,7 @@
-span {
-    color:#eaeaea;
+.searchhistory {
     padding:1em;
+    color:#eaeaea;
+}
+span {
     font-family: 'Roboto Mono', monospace;
 }
