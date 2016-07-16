@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import {SearchHistoryService} from '../search-history.service';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'recipe-search.component.html',
   styleUrls: ['recipe-search.component.css']
 })
-export class RecipeSearchComponent implements OnInit {
+export class RecipeSearchComponent {
 
-  constructor() {}
+  constructor(private _searchHistoryService: SearchHistoryService) {}
 
-  ngOnInit() {
-  }
 
 }
