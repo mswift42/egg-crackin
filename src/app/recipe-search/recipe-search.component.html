@@ -1,3 +1,4 @@
-<p>
-  recipe-search works!
-</p>
+<div class="searchbox">
+  <md-input #rec placeholder="Search for recipes or ingredients"
+  (keyup.enter)="searchRecipe(rec.value)"></md-input>
+</div>
