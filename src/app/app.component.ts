@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {RecipesviewComponent} from './recipesview-component/recipesview.component';
 import {RecipeService} from './recipe.service';
 import {FavouriteService} from './favourite.service';
 import {SearchHistoryService} from './search-history.service';
