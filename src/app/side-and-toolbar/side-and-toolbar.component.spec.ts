@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, ElementRef } from '@angular/core';
 
 import {
   beforeEach, beforeEachProviders,
@@ -14,7 +14,5 @@ import { SideAndToolbarComponent } from './side-and-toolbar.component';
 
 describe('Component: SideAndToolbar', () => {
   it('should create an instance', () => {
-    let component = new SideAndToolbarComponent();
-    expect(component).toBeTruthy();
   });
 });

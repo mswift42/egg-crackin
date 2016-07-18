@@ -15,6 +15,9 @@
         <md-list-item>
           <a [routerLink]="['/favourites']">Favourites</a>
         </md-list-item>
+        <md-list-item>
+          <a [routerLink]="['/about']">About</a>
+        </md-list-item>
       </md-list>
     </div>
     <div class="searchhistory">
@@ -22,6 +25,6 @@
     </div>
   </md-sidenav>
   <ng-content></ng-content>
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </md-sidenav-layout>
 <!--<app-recipesview></app-recipesview>-->
