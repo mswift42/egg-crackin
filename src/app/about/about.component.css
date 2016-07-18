@@ -1,0 +1,9 @@
+.about {
+    display:flex;
+    justify-content:center;
+    align-content:space-around;
+}
+.aboutheader {
+    text-align:center;
+}
+
