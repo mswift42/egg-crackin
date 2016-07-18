@@ -64,6 +64,7 @@ const barrels: string[] = [
   'app/search-history',
   'app/recipe-search',
   'app/side-and-toolbar',
+  'app/about',
   /** @cli-barrel */
 ];
 
