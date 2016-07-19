@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 
 @Component({
-  moduleId: module.id,
-  selector: 'app-about',
-  templateUrl: 'about.component.html',
-  styleUrls: ['about.component.css']
+    moduleId: module.id,
+    selector: 'app-about',
+    templateUrl: 'about.component.html',
+    styleUrls: ['about.component.css'],
+    directives: [MD_CARD_DIRECTIVES]
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
-  constructor() {}
-
-  ngOnInit() {
-  }
+    constructor() {}
 
 }
