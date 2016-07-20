@@ -7,4 +7,12 @@ handlers:
         - url: /
           static_files: dist/index.html
           upload: dist/(.*\.html)
+        - url: /(.*\.js)
+          static_files: dist/\1
+          upload: dist/(.*\.js)
+
+        - url: /vendor
+          static_dir: dist/vendor
+        - url: /app
+          static_dir: dist/app
 
