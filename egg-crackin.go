@@ -27,10 +27,10 @@ const (
 
 func getRecipes(w http.ResponseWriter, r *http.Request) {
 	query := r.FormValue("query")
-	url = BASEURL + APIKEY + "&q=" + query
+	url := BASEURL + APIKEY + "&q=" + query
 	recipes, err := loadRecipe(BASEURL + url)
 	if err != nil {
-		fmt.Fprintf(w, err)
+		fmt.Fprintf(w, err.Error(), http.StatusInternalServerError)
 	}
 	fmt.Fprintf(w, string(recipes))
 }
