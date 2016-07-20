@@ -1,14 +1,6 @@
 .about {
     width:98%;
-}
-.aboutheader {
-    text-align:center;
-}
-.abouttext {
-    padding:2em;
-    margin:0 auto;
-}
-
-hr {
-    border:0;
+    display: flex;
+    justify-content: center;
+    margin-top:2em;
 }
