@@ -32,7 +32,7 @@ export class RecipeService {
     // }
     queryUrl(query: string): string {
         let split = query.trim().split(" ");
-        let url = "/searchRecipe&query=";
+        let url = "/searchrecipe/?query=";
         url += split[0];
         for (var i of split.slice(1)) {
             url += "+" + i;

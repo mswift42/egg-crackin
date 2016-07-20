@@ -8,7 +8,7 @@ import (
 
 func init() {
 	http.HandleFunc("/", handler)
-	http.HandleFunc("/searchRecipe", getRecipes)
+	http.HandleFunc("/searchrecipe", getRecipes)
 }
 
 // func doGet(w http.ResponseWriter, r *http.Request) {
