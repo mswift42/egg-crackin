@@ -7,7 +7,6 @@ import (
 )
 
 func init() {
-	http.HandleFunc("/", handler)
 	http.HandleFunc("/searchrecipe", getRecipes)
 }
 
@@ -27,12 +26,16 @@ const (
 
 func getRecipes(w http.ResponseWriter, r *http.Request) {
 	query := r.FormValue("query")
-	url := BASEURL + APIKEY + "&q=" + query
+	url := searchUrl(query)
 	recipes, err := loadRecipe(BASEURL + url)
 	if err != nil {
 		fmt.Fprintf(w, err.Error(), http.StatusInternalServerError)
 	}
 	fmt.Fprintf(w, string(recipes))
+}
+
+func searchUrl(query string) string {
+	return BASEURL + APIKEY + "&q=" + query
 }
 
 func loadRecipe(url string) ([]byte, error) {
