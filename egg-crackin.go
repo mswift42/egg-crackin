@@ -24,17 +24,21 @@ const (
 	BASEURL = "http://food2fork.com/api/search?key="
 )
 
+func tHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "success")
+}
+
 func getRecipes(w http.ResponseWriter, r *http.Request) {
 	query := r.FormValue("query")
-	url := searchUrl(query)
-	recipes, err := loadRecipe(BASEURL + url)
+	url := searchURL(query)
+	recipes, err := loadRecipe(url)
 	if err != nil {
 		fmt.Fprintf(w, err.Error(), http.StatusInternalServerError)
 	}
 	fmt.Fprintf(w, string(recipes))
 }
 
-func searchUrl(query string) string {
+func searchURL(query string) string {
 	return BASEURL + APIKEY + "&q=" + query
 }
 
