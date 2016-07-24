@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+
+	"google.golang.org/appengine"
+	"google.golang.org/appengine/urlfetch"
 )
 
 func init() {
@@ -29,31 +32,22 @@ func tHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func getRecipes(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Content-Type", "application/json")
 	query := r.FormValue("query")
 	url := searchURL(query)
-	recipes, err := loadRecipe(url)
+	ctx := appengine.NewContext(r)
+	client := urlfetch.Client(ctx)
+	recipes, err := client.Get(url)
 	if err != nil {
 		fmt.Fprintf(w, err.Error(), http.StatusInternalServerError)
 	}
-	fmt.Fprintf(w, string(recipes))
+	body, err := ioutil.ReadAll(recipes.Body)
+	if err != nil {
+		http.Error(w, "couldn't read get request body", http.StatusInternalServerError)
+	}
+	fmt.Fprintf(w, string(body))
 }
 
 func searchURL(query string) string {
 	return BASEURL + APIKEY + "&q=" + query
-}
-
-func loadRecipe(url string) ([]byte, error) {
-	r, err := http.Get(url)
-	if err != nil {
-		return nil, err
-	}
-	defer r.Body.Close()
-
-	body, err := ioutil.ReadAll(r.Body)
-
-	if err != nil {
-		return nil, err
-	}
-	return body, nil
-
 }
