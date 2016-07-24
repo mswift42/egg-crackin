@@ -18,7 +18,7 @@ func TestSearchURL(t *testing.T) {
 
 func TestSearchRecipe(t *testing.T) {
 	resp := httptest.NewRecorder()
-	uri := "/searchrecipe/?query=eggs"
+	uri := "/searchrecipe?query=eggs"
 	req, err := http.NewRequest("GET", uri, nil)
 	if rf := req.FormValue("query"); rf != "eggs" {
 		t.Errorf("form value doesn't match: ", rf)
@@ -33,11 +33,11 @@ func TestSearchRecipe(t *testing.T) {
 		if strings.Contains(string(p), "error") {
 			t.Errorf("header response shouldn't return error: %s", p)
 		}
-		if !strings.Contains(string(p), "eggs") {
+		if !strings.Contains(string(p), "recipes") {
 			t.Errorf("header response doesn't match:\n%s ", p)
 		}
 	}
-	uri = "/searchrecipe/?query=cream+mushrooms"
+	uri = "/searchrecipe?query=cream+mushrooms"
 	nreq, err := http.NewRequest("GET", uri, nil)
 	if rf := nreq.FormValue("query"); rf != "cream mushrooms" {
 		t.Errorf("form value doesnt't match : ", rf)
