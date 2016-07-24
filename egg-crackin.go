@@ -50,5 +50,5 @@ func getRecipes(w http.ResponseWriter, r *http.Request) {
 }
 
 func searchURL(query string) string {
-	return BASEURL + APIKEY + "&q=" + strings.Replace(query, " ", "+", 0)
+	return BASEURL + APIKEY + "&q=" + strings.Replace(query, " ", "+", -1)
 }
