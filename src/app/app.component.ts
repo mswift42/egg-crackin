@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import {RecipeService} from './recipe.service';
 import {FavouriteService} from './favourite.service';
 import {SearchHistoryService} from './search-history.service';
@@ -10,7 +10,7 @@ import {SideAndToolbarComponent} from './side-and-toolbar/side-and-toolbar.compo
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css'],
     directives: [SideAndToolbarComponent],
-    providers: [RecipeService, FavouriteService, SearchHistoryService]
+    providers: [RecipeService, FavouriteService, SearchHistoryService],
 })
 export class AppComponent {
 }
