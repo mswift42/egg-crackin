@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/urlfetch"
@@ -49,5 +50,5 @@ func getRecipes(w http.ResponseWriter, r *http.Request) {
 }
 
 func searchURL(query string) string {
-	return BASEURL + APIKEY + "&q=" + query
+	return BASEURL + APIKEY + "&q=" + strings.Replace(query, " ", "+", 0)
 }

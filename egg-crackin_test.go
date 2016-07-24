@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"google.golang.org/appengine/aetest"
 )
 
 func TestSearchURL(t *testing.T) {
@@ -17,9 +18,18 @@ func TestSearchURL(t *testing.T) {
 }
 
 func TestSearchRecipe(t *testing.T) {
+	inst, err := aetest.NewInstance(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer inst.Close()
 	resp := httptest.NewRecorder()
 	uri := "/searchrecipe?query=eggs"
-	req, err := http.NewRequest("GET", uri, nil)
+	req, err := inst.NewRequest("GET", uri, nil)
+	// ctx, done, err := aetest.NewContext()
+	// if err != nil {
+	// 	t.Fatal(err)
+	// }
 	if rf := req.FormValue("query"); rf != "eggs" {
 		t.Errorf("form value doesn't match: ", rf)
 	}
@@ -40,7 +50,7 @@ func TestSearchRecipe(t *testing.T) {
 	uri = "/searchrecipe?query=cream+mushrooms"
 	nreq, err := http.NewRequest("GET", uri, nil)
 	if rf := nreq.FormValue("query"); rf != "cream mushrooms" {
-		t.Errorf("form value doesnt't match : ", rf)
+		t.Errorf("form value doesnt't match : %s", rf)
 	}
 	if err != nil {
 		t.Fatal(err)
