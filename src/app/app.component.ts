@@ -10,6 +10,7 @@ import {SideAndToolbarComponent} from './side-and-toolbar/side-and-toolbar.compo
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css'],
     directives: [SideAndToolbarComponent],
+    precompile: [SideAndToolbarComponent],
     providers: [RecipeService, FavouriteService, SearchHistoryService],
 })
 export class AppComponent {
