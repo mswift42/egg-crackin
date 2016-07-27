@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import {RecipeService} from './recipe.service';
 import {FavouriteService} from './favourite.service';
 import {SearchHistoryService} from './search-history.service';
