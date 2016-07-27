@@ -14,18 +14,13 @@ func init() {
 	http.HandleFunc("/searchrecipe", getRecipes)
 }
 
-// func doGet(w http.ResponseWriter, r *http.Request) {
-// 	w.Header().Add("Access-Control-Allow-Origin", "*")
-// 	w.Header().Add("Content-Type", "text/csv")
-// 	fmt.Fprintf(w, csvData)
-// }
 func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "success")
 }
 
 const (
-	APIKEY  = "7987c43afcf8a03a964bbcb0c9152c84"
-	BASEURL = "http://food2fork.com/api/search?key="
+	apiKey  = "7987c43afcf8a03a964bbcb0c9152c84"
+	baseURL = "http://food2fork.com/api/search?key="
 )
 
 func tHandler(w http.ResponseWriter, r *http.Request) {
@@ -50,5 +45,5 @@ func getRecipes(w http.ResponseWriter, r *http.Request) {
 }
 
 func searchURL(query string) string {
-	return BASEURL + APIKEY + "&q=" + strings.Replace(query, " ", "+", -1)
+	return baseURL + apiKey + "&q=" + strings.Replace(query, " ", "+", -1)
 }

@@ -15,8 +15,6 @@ handlers:
           static_dir: dist/vendor
         - url: /app
           static_dir: dist/app
-        - url: /searchrecipe
-          script: _go_app
 
 skip_files:
         - ^node_modules$
