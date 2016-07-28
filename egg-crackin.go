@@ -23,10 +23,6 @@ const (
 	baseURL = "http://food2fork.com/api/search?key="
 )
 
-func tHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "success")
-}
-
 func getRecipes(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
 	query := r.FormValue("query")
