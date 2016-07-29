@@ -1,4 +1,4 @@
-import { Component, OnInit , ElementRef} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MdToolbar} from '@angular2-material/toolbar';
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 import {ROUTER_DIRECTIVES} from '@angular/router';
@@ -20,7 +20,7 @@ import {AboutComponent} from '../about/about.component';
 export class SideAndToolbarComponent  implements OnInit{
     isOponed: boolean = false;
 
-    constructor(private _elementRef: ElementRef) { }
+    constructor() { }
 
     ngOnInit() {
         if (window.screen.width > 800) {
