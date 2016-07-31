@@ -1,4 +1,4 @@
-export class EggCrackin!Page {
+export class EggCrackinPage {
   navigateTo() {
     return browser.get('/');
   }
