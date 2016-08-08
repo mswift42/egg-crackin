@@ -4,9 +4,6 @@ runtime: go
 api_version: go1
 
 handlers:
-        - url: /
-          static_files: dist/index.html
-          upload: dist/(.*\.html)
         - url: /(.*\.js)
           static_files: dist/\1
           upload: dist/(.*\.js)
@@ -17,7 +14,18 @@ handlers:
           static_dir: dist/app
         - url: /searchrecipe
           script: _go_app
-
+        - url: /
+          static_files: dist/index.html
+          upload: dist/(.*\.html)
+        - url: /recipesearch
+          static_files: dist/index.html
+          upload: dist/(.*\.html)
+        - url: /about
+          static_files: dist/index.html
+          upload: dist/(.*\.html)
+        - url: /favourites
+          static_files: dist/index.html
+          upload: dist/(.*\.html)
 skip_files:
         - ^node_modules$
         - node_modules
