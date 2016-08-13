@@ -21,7 +21,6 @@ export class RecipeService {
     get food2forkKey(): string {
         return this._FOOD2FORKAPIKEY;
     }
-    
     queryUrl(query: string): string {
         let split = query.trim().split(" ");
         let url = "/searchrecipe?query=";
