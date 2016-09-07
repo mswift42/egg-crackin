@@ -14,7 +14,7 @@ import {AboutComponent} from '../about/about.component';
     styleUrls: ['side-and-toolbar.component.css'],
     directives: [ROUTER_DIRECTIVES, MdToolbar, MD_SIDENAV_DIRECTIVES,
                  MD_LIST_DIRECTIVES, SearchHistoryComponent],
-    precompile: [RecipesviewComponent, FavouritesViewComponent, AboutComponent]
+    entryComponents: [RecipesviewComponent, FavouritesViewComponent, AboutComponent]
 })
 export class SideAndToolbarComponent  implements OnInit{
     isOponed: boolean = false;

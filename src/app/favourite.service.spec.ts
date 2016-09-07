@@ -1,18 +1,17 @@
 /* tslint:disable:no-unused-variable */
 
 import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
-  async, inject
+  async, inject, addProviders
 } from '@angular/core/testing';
 import { FavouriteService } from './favourite.service';
 
 describe('Favourite Service', () => {
-  beforeEachProviders(() => [FavouriteService]);
+  beforeEach(() => {
+    addProviders([FavouriteService]);
+  });
 
   it('should ...',
-      inject([FavouriteService], (service: FavouriteService) => {
-    expect(service).toBeTruthy();
-  }));
+    inject([FavouriteService], (service: FavouriteService) => {
+      expect(service).toBeTruthy();
+    }));
 });
